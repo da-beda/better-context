@@ -58,7 +58,7 @@ jobs:
           path: apps/cli/dist/*
 
   publish-btca:
-    runs-on: ubuntu-latest
+    runs-on: grok
     needs: [build-cli-x64, build-cli-arm64]
     steps:
       - uses: actions/checkout@v4
@@ -115,7 +115,7 @@ jobs:
           git push origin "v${{ steps.version.outputs.version }}"
 
   publish-server:
-    runs-on: ubuntu-latest
+    runs-on: grok
     steps:
       - uses: actions/checkout@v4
 
